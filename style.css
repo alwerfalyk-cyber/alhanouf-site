@@ -125,7 +125,7 @@ ul {
     position: fixed;
     top: 35px; /* Stay below top-bar */
     left: 0;
-    z-index: 1000;
+    z-index: 5000 !important;
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     transition: none;
 }
@@ -1371,9 +1371,9 @@ footer {
 
    .logo,
    .nav-appointment-btn,
-   .menu-btn {
-      z-index: 103;
-
+   .menu-btn,
+   .menu-icon {
+      z-index: 9999 !important;
    }
 
    .logo {
@@ -1426,11 +1426,11 @@ footer {
 
    .menu-icon {
       cursor: pointer;
-      float: inline-end;
-      padding: 10px 0px;
+      display: block;
+      padding: 10px;
       position: relative;
       user-select: none;
-      z-index: 106;
+      z-index: 2000 !important;
    }
 
    .menu-icon .nav-icon {
@@ -1476,10 +1476,16 @@ footer {
    }
 
    .menu-btn:checked~.menu {
-      display: flex;
+      display: flex !important;
       flex-direction: column;
-      height: auto;
-      padding: 20px 0;
+      position: fixed;
+      top: 80px;
+      left: 0;
+      width: 100%;
+      height: calc(100vh - 80px);
+      background: #fff;
+      z-index: 1500;
+      padding: 40px 20px;
    }
    
    .menu-icon {
