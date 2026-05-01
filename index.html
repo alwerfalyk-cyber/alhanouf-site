@@ -941,6 +941,14 @@
                 1024: { slidesPerView: 3 }
             }
         });
+
+        // Close mobile menu when a link is clicked
+        document.querySelectorAll('.menu li a').forEach(link => {
+            link.addEventListener('click', () => {
+                const btn = document.getElementById('menu-btn');
+                if(btn) btn.checked = false;
+            });
+        });
     </script>
 </body>
 
