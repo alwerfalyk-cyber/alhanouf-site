@@ -1353,9 +1353,9 @@ footer {
 
    .hero-text {
       margin-bottom: 40px;
-      background-color: #ffffff;
       padding: 30px;
       margin-top: 0px;
+      text-align: center;
    }
 }
 
@@ -1375,8 +1375,8 @@ footer {
    }
 
    .logo {
-      margin-left: auto;
-      margin-right: 20px;
+      margin-inline-start: auto;
+      margin-inline-end: 20px;
    }
 
    .footer-container .logo {
@@ -1424,7 +1424,7 @@ footer {
 
    .menu-icon {
       cursor: pointer;
-      float: right;
+      float: inline-end;
       padding: 10px 0px;
       position: relative;
       user-select: none;
@@ -1528,6 +1528,15 @@ footer {
 }
 
 @media(max-width:620px) {
+   .top-bar-info {
+      display: none; /* Hide top bar info on very small screens to save space */
+   }
+   
+   .top-bar-social {
+      width: 100%;
+      justify-content: center;
+   }
+
    .hero-text {
       padding: 20px;
    }
@@ -1592,6 +1601,30 @@ footer {
       line-height: 1.8rem;
    }
 
+   /* Modal Responsive Tweaks */
+   .modal-info-box {
+      padding: 20px 20px 40px;
+   }
+   
+   .modal-info-box h2 {
+      font-size: 1.6rem;
+   }
+   
+   .modal-header-box i {
+      width: 80px;
+      height: 80px;
+      font-size: 2.5rem;
+   }
+
+   /* Section Spacing for Mobile */
+   #projects, #our-services, #our-story {
+      padding: 50px 0;
+   }
+   
+   .projects-heading h2 {
+      font-size: 2rem;
+   }
+
 }
 
 /* Projects Section */
@@ -1613,7 +1646,7 @@ footer {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
     max-width: 1200px;
     margin: 0 auto;
