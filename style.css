@@ -286,6 +286,7 @@ html[dir="ltr"] .menu {
     line-height: 4.8rem;
     font-weight: 800;
     text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    word-break: keep-all;
 }
 
 .hero-text p {
@@ -318,6 +319,7 @@ html[dir="ltr"] .menu {
    font-size: 1rem;
    font-weight: 600;
    transition: var(--transition);
+   white-space: nowrap;
 }
 
 .hero-text-btns a:hover {
@@ -1474,7 +1476,14 @@ footer {
    }
 
    .menu-btn:checked~.menu {
-      display: block;
+      display: flex;
+      flex-direction: column;
+      height: auto;
+      padding: 20px 0;
+   }
+   
+   .menu-icon {
+      z-index: 1100 !important;
    }
 
    .what-we-provide {
@@ -1824,8 +1833,9 @@ footer {
     padding: 15px;
     color: #334155;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 15px;
+    text-align: start;
     font-size: 1.05rem;
     font-weight: 500;
 }
@@ -1837,6 +1847,49 @@ footer {
 .modal-info-box ul li i {
     color: #10b981; /* Emerald Green for checks */
     font-size: 1.2rem;
+    margin-top: 4px;
+}
+
+@media(max-width: 620px) {
+    .modal-content {
+        width: 95% !important;
+        margin: 10px !important;
+    }
+    
+    .modal-header-box {
+        padding: 40px 20px 10px !important;
+    }
+    
+    .modal-info-box {
+        padding: 10px 20px 30px !important;
+    }
+    
+    .modal-info-box h2 {
+        font-size: 1.5rem !important;
+        line-height: 1.9rem !important;
+    }
+    
+    .modal-info-box p {
+        font-size: 0.95rem !important;
+        text-align: justify !important;
+        margin-bottom: 20px !important;
+    }
+    
+    .modal-info-box ul li {
+        font-size: 0.9rem !important;
+        padding: 10px !important;
+    }
+    
+    .modal-action-btn {
+        width: 100% !important;
+        padding: 15px !important;
+        font-size: 1rem !important;
+    }
+
+    .close-modal {
+        right: 15px !important;
+        top: 15px !important;
+    }
 }
 
 .modal-action-btn {
@@ -1901,4 +1954,4 @@ footer {
         font-size: 3rem;
         line-height: 3.5rem;
     }
-}
+}@media(max-width: 620px) { .hero-text h1 { font-size: 1.8rem !important; line-height: 2.2rem !important; } .our-story-text { border: none !important; } .navigation { top: 0 !important; } } .logo-circle { width: 220px; height: 220px; background: #fff; border-radius: 50%; display: flex; justify-content: center; align-items: center; box-shadow: 0 15px 45px rgba(0,0,0,0.06); margin-bottom: 25px; border: 3px solid var(--primary-red); position: relative; } .logo-circle img { width: 160px; height: 160px; object-fit: contain; } .comp-name { font-size: 2.2rem; color: var(--primary-red); font-weight: 800; } .elegant-line { width: 50px; height: 3px; background: var(--primary-red); margin: 0 auto 15px; } .comp-desc { font-size: 1rem; color: #64748b; }
